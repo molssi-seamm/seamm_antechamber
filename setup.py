@@ -77,10 +77,7 @@ setup(
         'Programming Language :: Python :: 3.8',
     ],
     entry_points={
-        'org.molssi.seamm': [
-            'Antechamber = seamm_antechamber:AntechamberStep',
-        ],
-        'org.molssi.seamm.tk': [
+        'org.molssi.seamm.atom_typers': [
             'Antechamber = seamm_antechamber:AntechamberStep',
         ],
     }

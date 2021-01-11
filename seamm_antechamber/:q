@@ -24,8 +24,10 @@ logger = logging.getLogger(__name__)
 job = printing.getPrinter()
 printer = printing.getPrinter('Antechamber')
 
+ANTECHAMBER = "~/Scratch/antechamber/amber20_src/bin/antechamber"
 
-class Antechamber(seamm.Node):
+
+class Antechamber:
     """
     The non-graphical part of a Antechamber step in a flowchart.
 
@@ -52,10 +54,9 @@ class Antechamber(seamm.Node):
 
     def __init__(
         self,
-        flowchart=None,
-        title='Antechamber',
-        extension=None,
-        logger=logger
+        parameter_set=None,
+        logger=logger,
+        **_ignore
     ):
         """A step for Antechamber in a SEAMM flowchart.
 
@@ -80,15 +81,9 @@ class Antechamber(seamm.Node):
         """
         logger.debug('Creating Antechamber {}'.format(self))
 
-        super().__init__(
-            flowchart=flowchart,
-            title='Antechamber',
-            extension=extension,
-            module=__name__,
-            logger=logger
-        )  # yapf: disable
+    def atom_type(self, system=None):
+        pass
 
-        self.parameters = seamm_antechamber.AntechamberParameters()
 
     @property
     def version(self):
@@ -127,68 +122,37 @@ class Antechamber(seamm.Node):
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
-    def run(self):
-        """Run a Antechamber step.
+    @property
+    def supported_forcefields(self):
+        return ["GAFF"]
 
-        Parameters
-        ----------
-        None
+    def assign_parameters(self, system=None):
 
-        Returns
-        -------
-        seamm.Node
-            The next node object in the flowchart.
-        """
-        next_node = super().run(printer)
-        # Get the values of the parameters, dereferencing any variables
-        P = self.parameters.current_values_to_dict(
-            context=seamm.flowchart_variables._data
-        )
+        mol_pdb = system.to_pdb_text()
+        #with open("pdbfile.pdb", "w") as f:
+        #    f.write(mol_pdb)
 
-        # Print what we are doing
-        printer.important(__(self.description_text(P), indent=self.indent))
+        cmd = [ANTECHAMBER,
+            "-i", 
+            "pdbfile.pdb", 
+            "-fi",
+            "pdb",
+            "-o",
+            "molfile.mol2",
+        ] 
+ 
+        return_files = ["molfile.mol2"]
+        local = seamm.ExecLocal()
+        result = local.run(cmd=cmd, files=mol_pdb, return_files=return_files)
 
-        # Temporary code just to print the parameters. You will need to change
-        # this!
-        for key in P:
-            print('{:>15s} = {}'.format(key, P[key]))
-            printer.normal(
-                __(
-                    '{key:>15s} = {value}',
-                    key=key,
-                    value=P[key],
-                    indent=4 * ' ',
-                    wrap=False,
-                    dedent=False
-                )
-            )
+        if result is None:
+            self.logger.error("There was an error running Antechamber")
 
-        # Analyze the results
-        self.analyze()
-
-        # Add other citations here or in the appropriate place in the code.
-        # Add the bibtex to data/references.bib, and add a self.reference.cite
-        # similar to the above to actually add the citation to the references.
-
-        return next_node
-
-    def analyze(self, indent='', **kwargs):
-        """Do any analysis of the output from this step.
-
-        Also print important results to the local step.out file using
-        'printer'.
-
-        Parameters
-        ----------
-        indent: str
-            An extra indentation for the output
-        """
-        printer.normal(
-            __(
-                'This is a placeholder for the results from the '
-                'Antechamber step',
-                indent=4 * ' ',
-                wrap=True,
-                dedent=False
-            )
-        )
+#        #ff = self.get_variable('_forcefield')
+#        #ff_assigner = seamm_ff_util.FFAssigner(ff)
+#        #atom_types = ff_assigner.assign(smiles, add_hydrogens=False)
+#        print('IN ASSIGN PARAMETERS')
+#        print(system.atoms)
+#        n_atoms = molecule.GetNumAtoms()
+#        atom_types = ['?'] * n_atoms
+#        pass

@@ -32,7 +32,7 @@ class AntechamberStep(object):
             (
                 'An interface for Antechamber'
             ),
-        'group': 'Simulations',
+        'group': 'Atom typers',
         'name': 'Antechamber'
     }  # yapf: disable
 
@@ -48,7 +48,7 @@ class AntechamberStep(object):
         """
         return AntechamberStep.my_description
 
-    def create_node(self, flowchart=None, **kwargs):
+    def create_atom_typer(self, **kwargs):
         """Create and return the new node object.
 
         Parameters
@@ -71,29 +71,4 @@ class AntechamberStep(object):
         Antechamber
 
         """
-
-        return seamm_antechamber.Antechamber(flowchart=flowchart, **kwargs)
-
-    def create_tk_node(self, canvas=None, **kwargs):
-        """Create and return the graphical Tk node object.
-
-        Parameters
-        ----------
-        canvas : tk.Canvas
-            The Tk Canvas widget
-
-        **kwargs : keyworded arguments
-            Various keyworded arguments such as tk_flowchart, node, x, y, w, h
-            representing a graphical flowchart object, a non-graphical node for
-            a step, and dimensions of the graphical node.
-
-        Returns
-        -------
-        TkAntechamber
-
-        See Also
-        --------
-        TkAntechamber
-        """
-
-        return seamm_antechamber.TkAntechamber(canvas=canvas, **kwargs)
+        return seamm_antechamber.Antechamber(**kwargs)
