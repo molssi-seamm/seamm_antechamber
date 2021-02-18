@@ -81,6 +81,8 @@ class Antechamber:
         """
         logger.debug('Creating Antechamber {}'.format(self))
         self.directory = os.getcwd()
+        self.name= "Antechamber"
+        self.supported_forcefields = ["GAFF"]
 
     def atom_type(self, system=None):
         pass
@@ -122,10 +124,6 @@ class Antechamber:
         )
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
-
-    @property
-    def supported_forcefields(self):
-        return ["GAFF"]
 
     def assign_parameters(self, system=None):
 
