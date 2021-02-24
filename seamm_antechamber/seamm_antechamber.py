@@ -81,7 +81,7 @@ class Antechamber:
         """
         logger.debug('Creating Antechamber {}'.format(self))
         self.directory = os.getcwd()
-        self.name= "Antechamber"
+        self.name = self.__class__.__name__
         self.supported_forcefields = ["GAFF"]
 
     def atom_type(self, system=None):
@@ -128,7 +128,7 @@ class Antechamber:
     def assign_parameters(self, system=None):
 
         input_files = {}
-        input_files['pdbfile.pdb'] = system.to_pdb_text()
+        input_files['pdbfile.pdb'] = system.system.configuration.to_pdb_text()
 
         filename = os.path.join(self.directory, "pdbfile.pdb")
         with open(filename, "w") as f:
@@ -167,11 +167,14 @@ class Antechamber:
 
             atom_types = self.extract_atom_types(f, system)
 
-        return atom_types
+        key = f'atomtypes_{self.name}'
+        if key not in system.system.configuration.atoms:
+            system.system.configuration.atoms.add_attribute(key, coltype='str')
+        system.system.configuration.atoms[key] = atom_types
 
     def extract_atom_types(self, data, system):
 
-        atom_types = ["?"] * system.n_atoms() 
+        atom_types = ["?"] * system.system.configuration.n_atoms
 
         with open(data, "r") as f:
             try:
