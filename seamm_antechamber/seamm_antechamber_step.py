@@ -48,7 +48,7 @@ class AntechamberStep(object):
         """
         return AntechamberStep.my_description
 
-    def create_atom_typer(self, **kwargs):
+    def create_atomtyper(self, **kwargs):
         """Create and return the new node object.
 
         Parameters
