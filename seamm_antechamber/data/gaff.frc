@@ -9,7 +9,7 @@
 1.0  1     atom_types                       gaff
 1.0  1     quadratic_bond                   gaff
 1.0  1     quadratic_angle					gaff
-1.0  1     dihedral                         gaff
+1.0  1     torsion_1                        gaff
 
 #atom_types           gaff
 
@@ -6352,7 +6352,7 @@
 1.0     1     c3-cx-s4      115.92    58.9
 1.0     1     ca-os-cx      106.92    66.3
 
-#dihedral            gaff 
+#torsion_1  gaff 
 
 > E = Kphi * [ 1 + cos(n*Phi - Phi0) ]
 
@@ -7103,7 +7103,7 @@
 1.0 1 ca    os    p5    o     0.80000 2.    180.0 
 1.0 1 ca    os    p5    o     0.10000 3.    0.0   
 
-#improper            gaff 
+#torsion_1 gaff 
 
 > E = Kphi * [ 1 + cos(n*Phi - Phi0) ]
 
