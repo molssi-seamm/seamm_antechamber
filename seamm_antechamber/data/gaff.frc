@@ -10,6 +10,7 @@
 1.0  1     quadratic_bond                   gaff
 1.0  1     quadratic_angle					gaff
 1.0  1     torsion_1                        gaff
+1.0  1     torsion_1                        gaff
 
 #atom_types           gaff
 
