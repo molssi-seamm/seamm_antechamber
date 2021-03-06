@@ -10,7 +10,6 @@
 1.0  1     quadratic_bond                   gaff
 1.0  1     quadratic_angle					gaff
 1.0  1     torsion_1                        gaff
-1.0  1     torsion_1                        gaff
 
 #atom_types           gaff
 
@@ -7103,13 +7102,6 @@
 1.0 1 ca    ca    os    p5    1.75000 2.    180.0 
 1.0 1 ca    os    p5    o     0.80000 2.    180.0 
 1.0 1 ca    os    p5    o     0.10000 3.    0.0   
-
-#torsion_1 gaff 
-
-> E = Kphi * [ 1 + cos(n*Phi - Phi0) ]
-
-!Ver Ref    I     J     K     L       KPhi     n     Phi0
-!--- ---  ----- ----- ----- -----   --------  ---  ---------
 1.0   1   *  o  c  o          1.1          2.       180.
 1.0   1   *  *  c  o          10.5         2.       180.
 1.0   1   *  *  ca ha         1.1          2.       180.
