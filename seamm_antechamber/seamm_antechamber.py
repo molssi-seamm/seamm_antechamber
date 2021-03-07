@@ -171,9 +171,9 @@ class Antechamber:
             atom_types = self.extract_atom_types(f, system)
 
         key = f'atomtypes_{self.name}'
-        if key not in system.system.configuration.atoms:
-            system.system.configuration.atoms.add_attribute(key, coltype='str')
-        system.system.configuration.atoms[key] = atom_types
+        if key not in system['atom']:
+            system['atom'].add_attribute(key, coltype='str')
+        system['atom'][key] = atom_types
 
     def extract_atom_types(self, data, system):
 
