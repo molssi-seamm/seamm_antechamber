@@ -82,7 +82,10 @@ class Antechamber:
         logger.debug('Creating Antechamber {}'.format(self))
         self.directory = os.getcwd()
         self.name = self.__class__.__name__
-        self.supported_forcefields = ["GAFF"]
+
+        self.forcefield = seamm.Forcefield(filename="/Users/meliseo/Git/SEAMM2/seamm_antechamber/seamm_antechamber/data/gaff.frc")
+
+        self.supported_forcefields = [self.forcefield.name]
 
     def atom_type(self, system=None):
         pass
