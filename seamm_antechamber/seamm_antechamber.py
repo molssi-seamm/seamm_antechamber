@@ -125,8 +125,10 @@ class Antechamber:
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
     def assign_parameters(self, configuration=None):
-        import pdb
-        pdb.set_trace()
+
+        if configuration is None:
+            raise TypeError("A configuration must be provided when assigning forcefield parameters")
+
         input_files = {}
         input_files['pdbfile.pdb'] = configuration.to_pdb_text()
 
