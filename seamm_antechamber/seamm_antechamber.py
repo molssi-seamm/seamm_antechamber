@@ -87,10 +87,6 @@ class Antechamber:
 
         self.supported_forcefields = [self.forcefield.name]
 
-    def atom_type(self, system=None):
-        pass
-
-
     @property
     def version(self):
         """The semantic version of this module.
@@ -128,10 +124,11 @@ class Antechamber:
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
-    def assign_parameters(self, system=None):
-
+    def assign_parameters(self, configuration=None):
+        import pdb
+        pdb.set_trace()
         input_files = {}
-        input_files['pdbfile.pdb'] = system.system.configuration.to_pdb_text()
+        input_files['pdbfile.pdb'] = configuration.to_pdb_text()
 
         filename = os.path.join(self.directory, "pdbfile.pdb")
         with open(filename, "w") as f:
@@ -168,16 +165,16 @@ class Antechamber:
                 else:
                     fd.write(result[filename]['exception'])
 
-            atom_types = self.extract_atom_types(f, system)
+            atom_types = self.extract_atom_types(f, configuration)
 
         key = f'atomtypes_{self.name}'
-        if key not in system['atom']:
-            system['atom'].add_attribute(key, coltype='str')
-        system['atom'][key] = atom_types
+        if key not in configuration.atoms:
+            configuration.atoms.add_attribute(key, coltype='str')
+        configuration.atoms[key] = atom_types
 
-    def extract_atom_types(self, data, system):
+    def extract_atom_types(self, data, configuration):
 
-        atom_types = ["?"] * system.system.configuration.n_atoms
+        atom_types = ["?"] * configuration.n_atoms
 
         with open(data, "r") as f:
             try:
