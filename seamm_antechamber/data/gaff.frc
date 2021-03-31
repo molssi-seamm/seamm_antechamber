@@ -16,89 +16,89 @@
 
 !Ver       Ref  Type     Mass      Element   connection   Comment
 !--------- ---  -----  ----------  -------   ----------   ---------------------------
-1.0   1   c  12.01  C   3   Sp2 C carbonyl group 
-1.0   1   c1 12.01  C   2   Sp C
-1.0   1   c2 12.01  C   3   Sp2 C  
-1.0   1   c3 12.01  C   4   Sp3 C
-1.0   1   ca 12.01  C   3   Sp2 C in pure aromatic systems
-1.0   1   cp 12.01  C   3   Head Sp2 C that connect two rings in biphenyl sys. 
-1.0   1   cq 12.01  C   3   Head Sp2 C that connect two rings in biphenyl sys. identical to cp 
-1.0   1   cc 12.01  C   3   Sp2 carbons in non-pure aromatic systems
-1.0   1   cd 12.01  C   3   Sp2 carbons in non-pure aromatic systems, identical to cc
-1.0   1   ce 12.01  C   3   Inner Sp2 carbons in conjugated systems
-1.0   1   cf 12.01  C   3   Inner Sp2 carbons in conjugated systems, identical to ce
-1.0   1   cg 12.01  C   2   Inner Sp carbons in conjugated systems
-1.0   1   ch 12.01  C   2   Inner Sp carbons in conjugated systems, identical to cg
-1.0   1   cx 12.01  C   4   Sp3 carbons in triangle systems
-1.0   1   cy 12.01  C   4   Sp3 carbons in square systems
-1.0   1   cu 12.01  C   3   Sp2 carbons in triangle systems
-1.0   1   cv 12.01  C   3   Sp2 carbons in square systems
-1.0   1   cz 12.01  C   3   Sp2 carbon in guanidine group
-1.0   1   h1 1.008  H   1   H bonded to aliphatic carbon with 1 electrwd. group  
-1.0   1   h2 1.008  H   1   H bonded to aliphatic carbon with 2 electrwd. group 
-1.0   1   h3 1.008  H   1   H bonded to aliphatic carbon with 3 electrwd. group 
-1.0   1   h4 1.008  H   1   H bonded to non-sp3 carbon with 1 electrwd. group 
-1.0   1   h5 1.008  H   1   H bonded to non-sp3 carbon with 2 electrwd. group 
-1.0   1   ha 1.008  H   1   H bonded to aromatic carbon  
-1.0   1   hc 1.008  H   1   H bonded to aliphatic carbon without electrwd. group 
-1.0   1   hn 1.008  H   1   H bonded to nitrogen atoms
-1.0   1   ho 1.008  H   1   Hydroxyl group
-1.0   1   hp 1.008  H   1   H bonded to phosphate 
-1.0   1   hs 1.008  H   1   Hydrogen bonded to sulphur 
-1.0   1   hw 1.008  H   1   Hydrogen in water 
-1.0   1   hx 1.008  H   1   H bonded to C next to positively charged group  
+1.0   1   c  12.01  C   0   Sp2 C carbonyl group 
+1.0   1   c1 12.01  C   0   Sp C
+1.0   1   c2 12.01  C   0   Sp2 C  
+1.0   1   c3 12.01  C   0   Sp3 C
+1.0   1   ca 12.01  C   0   Sp2 C in pure aromatic systems
+1.0   1   cp 12.01  C   0   Head Sp2 C that connect two rings in biphenyl sys. 
+1.0   1   cq 12.01  C   0   Head Sp2 C that connect two rings in biphenyl sys. identical to cp 
+1.0   1   cc 12.01  C   0   Sp2 carbons in non-pure aromatic systems
+1.0   1   cd 12.01  C   0   Sp2 carbons in non-pure aromatic systems, identical to cc
+1.0   1   ce 12.01  C   0   Inner Sp2 carbons in conjugated systems
+1.0   1   cf 12.01  C   0   Inner Sp2 carbons in conjugated systems, identical to ce
+1.0   1   cg 12.01  C   0   Inner Sp carbons in conjugated systems
+1.0   1   ch 12.01  C   0   Inner Sp carbons in conjugated systems, identical to cg
+1.0   1   cx 12.01  C   0   Sp3 carbons in triangle systems
+1.0   1   cy 12.01  C   0   Sp3 carbons in square systems
+1.0   1   cu 12.01  C   0   Sp2 carbons in triangle systems
+1.0   1   cv 12.01  C   0   Sp2 carbons in square systems
+1.0   1   cz 12.01  C   0   Sp2 carbon in guanidine group
+1.0   1   h1 1.008  H   0   H bonded to aliphatic carbon with 1 electrwd. group  
+1.0   1   h2 1.008  H   0   H bonded to aliphatic carbon with 2 electrwd. group 
+1.0   1   h3 1.008  H   0   H bonded to aliphatic carbon with 3 electrwd. group 
+1.0   1   h4 1.008  H   0   H bonded to non-sp3 carbon with 1 electrwd. group 
+1.0   1   h5 1.008  H   0   H bonded to non-sp3 carbon with 2 electrwd. group 
+1.0   1   ha 1.008  H   0   H bonded to aromatic carbon  
+1.0   1   hc 1.008  H   0   H bonded to aliphatic carbon without electrwd. group 
+1.0   1   hn 1.008  H   0   H bonded to nitrogen atoms
+1.0   1   ho 1.008  H   0   Hydroxyl group
+1.0   1   hp 1.008  H   0   H bonded to phosphate 
+1.0   1   hs 1.008  H   0   Hydrogen bonded to sulphur 
+1.0   1   hw 1.008  H   0   Hydrogen in water 
+1.0   1   hx 1.008  H   0   H bonded to C next to positively charged group  
 1.0   1   f  19.00  F   0   Fluorine
 1.0   1   cl 35.45  Cl  0   Chlorine 
 1.0   1   br 79.90  Br  0   Bromine 
 1.0   1   i  126.9  I   0   Iodine 
-1.0   1   n  14.01  N   3    Sp2 nitrogen in amide groups
-1.0   1   n1 14.01  N   1    Sp N  
-1.0   1   n2 14.01  N   2    aliphatic Sp2 N with two connected atoms 
-1.0   1   n3 14.01  N   3    Sp3 N with three connected atoms
-1.0   1   n4 14.01  N   4    Sp3 N with four connected atoms 
-1.0   1   na 14.01  N   3    Sp2 N with three connected atoms 
-1.0   1   nb 14.01  N   2    Sp2 N in pure aromatic systems 
-1.0   1   nc 14.01  N   2    Sp2 N in non-pure aromatic systems
-1.0   1   nd 14.01  N   2    Sp2 N in non-pure aromatic systems, identical to nc
-1.0   1   ne 14.01  N   2    Inner Sp2 N in conjugated systems
-1.0   1   nf 14.01  N   2    Inner Sp2 N in conjugated systems, identical to ne
-1.0   1   nh 14.01  N   3    Amine N connected one or more aromatic rings 
-1.0   1   no 14.01  N   3    Nitro N  
-1.0   1   ni 14.01  N   3    n in 3-memberred rings
-1.0   1   nj 14.01  N   3    n in 4-memberred rings
-1.0   1   nk 14.01  N   4    n4 in 3-memberred rings
-1.0   1   nl 14.01  N   4    n4 in 4-memberred rings
-1.0   1   nm 14.01  N   3    nh in 3-memberred rings
-1.0   1   nn 14.01  N   3    nh in 4-memberred rings
-1.0   1   np 14.01  N   3    n3 in 3-memberred rings
-1.0   1   nq 14.01  N   3    n3 in 4-memberred rings
-1.0   1   o  16.00  O   1    Oxygen with one connected atom
-1.0   1   oh 16.00  O   2    Oxygen in hydroxyl group
-1.0   1   os 16.00  O   2    Ether and ester oxygen
-1.0   1   op 16.00  O   2    os in 3-memberred rings
-1.0   1   oq 16.00  O   2    os in 4-memberred rings
-1.0   1   ow 16.00  O   2    Oxygen in water 
-1.0   1   p2 30.97  P   2    Phosphate with two connected atoms 
-1.0   1   p3 30.97  P   3    Phosphate with three connected atoms, such as PH3
-1.0   1   p4 30.97  P   3    Phosphate with three connected atoms, such as O=P(CH3)2
-1.0   1   p5 30.97  P   4    Phosphate with four connected atoms, such as O=P(OH)3
-1.0   1   pb 30.97  P   2    Sp2 P in pure aromatic systems 
-1.0   1   pc 30.97  P   2    Sp2 P in non-pure aromatic systems
-1.0   1   pd 30.97  P   2    Sp2 P in non-pure aromatic systems, identical to pc
-1.0   1   pe 30.97  P   2    Inner Sp2 P in conjugated systems
-1.0   1   pf 30.97  P   2    Inner Sp2 P in conjugated systems, identical to pe
-1.0   1   px 30.97  P   3    Special p4 in conjugated systems
-1.0   1   py 30.97  P   4    Special p5 in conjugated systems
-1.0   1   s  32.06  S   1    S with one connected atom 
-1.0   1   s2 32.06  S   2    S with two connected atom, involved at least one double bond  
-1.0   1   s4 32.06  S   3    S with three connected atoms 
-1.0   1   s6 32.06  S   4    S with four connected atoms 
-1.0   1   sh 32.06  S   1    Sp3 S connected with hydrogen 
-1.0   1   ss 32.06  S   2    Sp3 S in thio-ester and thio-ether
-1.0   1   sp 32.06  S   2    ss in 3-memberred rings
-1.0   1   sq 32.06  S   2    ss in 4-memberred rings
-1.0   1   sx 32.06  S   3    Special s4 in conjugated systems
-1.0   1   sy 32.06  S   4    Special s6 in conjugated systems
+1.0   1   n  14.01  N   0    Sp2 nitrogen in amide groups
+1.0   1   n1 14.01  N   0    Sp N  
+1.0   1   n2 14.01  N   0    aliphatic Sp2 N with two connected atoms 
+1.0   1   n3 14.01  N   0    Sp3 N with three connected atoms
+1.0   1   n4 14.01  N   0    Sp3 N with four connected atoms 
+1.0   1   na 14.01  N   0    Sp2 N with three connected atoms 
+1.0   1   nb 14.01  N   0    Sp2 N in pure aromatic systems 
+1.0   1   nc 14.01  N   0    Sp2 N in non-pure aromatic systems
+1.0   1   nd 14.01  N   0    Sp2 N in non-pure aromatic systems, identical to nc
+1.0   1   ne 14.01  N   0    Inner Sp2 N in conjugated systems
+1.0   1   nf 14.01  N   0    Inner Sp2 N in conjugated systems, identical to ne
+1.0   1   nh 14.01  N   0    Amine N connected one or more aromatic rings 
+1.0   1   no 14.01  N   0    Nitro N  
+1.0   1   ni 14.01  N   0    n in 3-memberred rings
+1.0   1   nj 14.01  N   0    n in 4-memberred rings
+1.0   1   nk 14.01  N   0    n4 in 3-memberred rings
+1.0   1   nl 14.01  N   0    n4 in 4-memberred rings
+1.0   1   nm 14.01  N   0    nh in 3-memberred rings
+1.0   1   nn 14.01  N   0    nh in 4-memberred rings
+1.0   1   np 14.01  N   0    n3 in 3-memberred rings
+1.0   1   nq 14.01  N   0    n3 in 4-memberred rings
+1.0   1   o  16.00  O   0    Oxygen with one connected atom
+1.0   1   oh 16.00  O   0    Oxygen in hydroxyl group
+1.0   1   os 16.00  O   0    Ether and ester oxygen
+1.0   1   op 16.00  O   0    os in 3-memberred rings
+1.0   1   oq 16.00  O   0    os in 4-memberred rings
+1.0   1   ow 16.00  O   0    Oxygen in water 
+1.0   1   p2 30.97  P   0    Phosphate with two connected atoms 
+1.0   1   p3 30.97  P   0    Phosphate with three connected atoms, such as PH3
+1.0   1   p4 30.97  P   0    Phosphate with three connected atoms, such as O=P(CH3)2
+1.0   1   p5 30.97  P   0    Phosphate with four connected atoms, such as O=P(OH)3
+1.0   1   pb 30.97  P   0    Sp2 P in pure aromatic systems 
+1.0   1   pc 30.97  P   0    Sp2 P in non-pure aromatic systems
+1.0   1   pd 30.97  P   0    Sp2 P in non-pure aromatic systems, identical to pc
+1.0   1   pe 30.97  P   0    Inner Sp2 P in conjugated systems
+1.0   1   pf 30.97  P   0    Inner Sp2 P in conjugated systems, identical to pe
+1.0   1   px 30.97  P   0    Special p4 in conjugated systems
+1.0   1   py 30.97  P   0    Special p5 in conjugated systems
+1.0   1   s  32.06  S   0    S with one connected atom 
+1.0   1   s2 32.06  S   0    S with two connected atom, involved at least one double bond  
+1.0   1   s4 32.06  S   0    S with three connected atoms 
+1.0   1   s6 32.06  S   0    S with four connected atoms 
+1.0   1   sh 32.06  S   0    Sp3 S connected with hydrogen 
+1.0   1   ss 32.06  S   0    Sp3 S in thio-ester and thio-ether
+1.0   1   sp 32.06  S   0    ss in 3-memberred rings
+1.0   1   sq 32.06  S   0    ss in 4-memberred rings
+1.0   1   sx 32.06  S   0    Special s4 in conjugated systems
+1.0   1   sy 32.06  S   0    Special s6 in conjugated systems
 
 #nonbond(12-6)      gaff
 
