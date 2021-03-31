@@ -7,7 +7,7 @@
 !Ver Ref                Function             Label
 !--- ---    ------------------------------   ------
 1.0  1     atom_types                       gaff
-1.0  1     
+1.0  1     nonbond(12-6)                   gaff
 1.0  1     quadratic_bond                   gaff
 1.0  1     quadratic_angle					gaff
 1.0  1     torsion_1                        gaff
