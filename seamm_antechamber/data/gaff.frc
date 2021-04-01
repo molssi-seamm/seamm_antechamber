@@ -103,6 +103,10 @@
 #nonbond(12-6)      gaff
 
 > E = 4 * epsilon * [(sigma/r(ij))**12 - (sigma/r(ij))**6]
+
+@type sigma-eps
+@combination sixthpower
+
 !Ver       Ref  Type     sigma     epsilon   Comment
 !--------- ---  -----  ----------  -------   -------
 
