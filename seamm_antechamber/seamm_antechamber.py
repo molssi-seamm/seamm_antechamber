@@ -124,10 +124,13 @@ class Antechamber:
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
-    def assign_parameters(self, configuration=None):
+    def assign_parameters(self, configuration=None, charge_method="AM1-BCC"):
 
         if configuration is None:
             raise TypeError("A configuration must be provided when assigning forcefield parameters")
+
+        if charge_method not in ["AM1-BCC"]:
+            raise TypeError("Only AM1-BCC is allowed as a charge method for GAFF forcefield")
 
         input_files = {}
         input_files['pdbfile.pdb'] = configuration.to_pdb_text()
@@ -136,7 +139,7 @@ class Antechamber:
         with open(filename, "w") as f:
             f.write(input_files["pdbfile.pdb"])
 
-        cmd = [ANTECHAMBER,
+        cmd =[ANTECHAMBER,
             "-i", 
             "pdbfile.pdb", 
             "-fi",
@@ -144,8 +147,11 @@ class Antechamber:
             "-o",
             "molfile.mol2",
             "-fo",
-            "mol2"
-        ] 
+            "mol2"]
+        
+        if charge_method is "AM1-BCC":
+            cmd.extend(["-c", "bcc"])
+
         return_files = ["molfile.mol2"]
         local = seamm.ExecLocal()
         result = local.run(cmd=cmd, files=input_files, return_files=return_files)
@@ -167,16 +173,22 @@ class Antechamber:
                 else:
                     fd.write(result[filename]['exception'])
 
-            atom_types = self.extract_atom_types(f, configuration)
+            atom_types, charges = self.extract_atomtypes_and_charges(f, configuration)
 
         key = f'atomtypes_{self.name}'
         if key not in configuration.atoms:
             configuration.atoms.add_attribute(key, coltype='str')
         configuration.atoms[key] = atom_types
 
-    def extract_atom_types(self, data, configuration):
+        key = f'charges_{self.name}'
+        if key not in configuration.atoms:
+            configuration.atoms.add_attribute(key, coltype='float')
+        configuration.atoms[key] = charges
 
-        atom_types = ["?"] * configuration.n_atoms
+    def extract_atomtypes_and_charges(self, data, configuration):
+
+        atom_types = [""] * configuration.n_atoms
+        charges = [""] * configuration.n_atoms
 
         with open(data, "r") as f:
             try:
@@ -196,7 +208,9 @@ class Antechamber:
                         atom_id = int(line_split[0])
                         atom_name = line_split[1]
                         atom_type = line_split[5]
+                        atom_charge = line_split[8]
                         atom_types[atom_id - 1] = atom_type
+                        charges[atom_id - 1] = float(atom_charge)
             except:
                 pass
-        return atom_types
+        return atom_types, charges
