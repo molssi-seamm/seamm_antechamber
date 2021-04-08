@@ -80,6 +80,7 @@ class Antechamber:
         None
         """
         logger.debug('Creating Antechamber {}'.format(self))
+
         self.directory = os.getcwd()
         self.name = self.__class__.__name__
 
@@ -173,12 +174,12 @@ class Antechamber:
                 else:
                     fd.write(result[filename]['exception'])
 
-            atom_types, charges = self.extract_atomtypes_and_charges(f, configuration)
+            atomtypes, charges = self.extract_atomtypes_and_charges(f, configuration)
 
         key = f'atomtypes_{self.name}'
         if key not in configuration.atoms:
             configuration.atoms.add_attribute(key, coltype='str')
-        configuration.atoms[key] = atom_types
+        configuration.atoms[key] = atomtypes
 
         key = f'charges_{self.name}'
         if key not in configuration.atoms:
@@ -187,7 +188,7 @@ class Antechamber:
 
     def extract_atomtypes_and_charges(self, data, configuration):
 
-        atom_types = [""] * configuration.n_atoms
+        atomtypes = [""] * configuration.n_atoms
         charges = [""] * configuration.n_atoms
 
         with open(data, "r") as f:
@@ -209,8 +210,8 @@ class Antechamber:
                         atom_name = line_split[1]
                         atom_type = line_split[5]
                         atom_charge = line_split[8]
-                        atom_types[atom_id - 1] = atom_type
+                        atomtypes[atom_id - 1] = atom_type
                         charges[atom_id - 1] = float(atom_charge)
             except:
                 pass
-        return atom_types, charges
+        return atomtypes, charges
