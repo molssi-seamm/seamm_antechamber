@@ -88,6 +88,8 @@ class Antechamber:
 
         self.supported_forcefields = [self.forcefield.name]
 
+        self.selected_forcefield = "GAFF"
+
     @property
     def version(self):
         """The semantic version of this module.
@@ -176,12 +178,12 @@ class Antechamber:
 
             atomtypes, charges = self.extract_atomtypes_and_charges(f, configuration)
 
-        key = f'atomtypes_{self.name}'
+        key = f'atomtypes_{self.selected_forcefield}'
         if key not in configuration.atoms:
             configuration.atoms.add_attribute(key, coltype='str')
         configuration.atoms[key] = atomtypes
 
-        key = f'charges_{self.name}'
+        key = f'charges_{self.selected_forcefield}'
         if key not in configuration.atoms:
             configuration.atoms.add_attribute(key, coltype='float')
         configuration.atoms[key] = charges
