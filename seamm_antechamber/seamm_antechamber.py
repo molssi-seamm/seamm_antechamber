@@ -127,6 +127,16 @@ class Antechamber:
 
         return self.header + '\n' + __(text, **P, indent=4 * ' ').__str__()
 
+    def indent(self):
+        length = len(self._id)
+        if length <= 1:
+            return ''
+        if length > 2:
+            result = (length - 2) * (3 * ' ' + '.') + 4 * ' '
+        else:
+            result = 4 * ' '
+        return result
+
     def assign_parameters(self, configuration=None, charge_method="AM1-BCC"):
 
         if configuration is None:
@@ -135,6 +145,12 @@ class Antechamber:
         if charge_method not in ["AM1-BCC"]:
             raise TypeError("Only AM1-BCC is allowed as a charge method for GAFF forcefield")
 
+        printer.important(
+            __(
+                "Assigning the atom types and charges for forcefield "
+                f"'{self.forcefield.name}' to the system",
+            )
+        )
         input_files = {}
         input_files['pdbfile.pdb'] = configuration.to_pdb_text()
 
