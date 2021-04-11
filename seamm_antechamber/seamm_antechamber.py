@@ -88,7 +88,7 @@ class Antechamber:
 
         self.supported_forcefields = [self.forcefield.name]
 
-        self.selected_forcefield = "GAFF"
+        self.selected_forcefield = self.forcefield.name
 
     @property
     def version(self):
