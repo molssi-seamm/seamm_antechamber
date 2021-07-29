@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 job = printing.getPrinter()
 printer = printing.getPrinter('Antechamber')
 
-ANTECHAMBER = "/Users/meliseo/Scratch/antechamber/amber20_src/bin/antechamber"
+ANTECHAMBER = "/Users/eliseo/miniconda3/envs/AmberTools21/bin/antechamber"
 
 
 class Antechamber:
@@ -84,7 +84,7 @@ class Antechamber:
         self.directory = os.getcwd()
         self.name = self.__class__.__name__
 
-        self.forcefield = seamm.Forcefield(filename="/Users/meliseo/Git/SEAMM2/seamm_antechamber/seamm_antechamber/data/gaff.frc")
+        self.forcefield = seamm.Forcefield(filename="/Users/eliseo/SEAMM/seamm_antechamber/seamm_antechamber/data/gaff.frc")
 
         self.supported_forcefields = [self.forcefield.name]
 
@@ -195,6 +195,7 @@ class Antechamber:
             atomtypes, charges = self.extract_atomtypes_and_charges(f, configuration)
 
         key = f'atomtypes_{self.selected_forcefield}'
+
         if key not in configuration.atoms:
             configuration.atoms.add_attribute(key, coltype='str')
         configuration.atoms[key] = atomtypes
